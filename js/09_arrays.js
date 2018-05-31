@@ -37,19 +37,40 @@ for (let numero in numeros) {
 
 console.log(numeros);
 
-//3- Ordenamos el array
+//3- Ordenamos el array*****************************************************************
 
 document.write("<h1>Ordenamos el array</h1>");
-numeros.sort(function(a,b){return a-b}); // Para ordenar el array numéricamente.
-console.log(typeof numeros);
+var numeros_ascendentes = numeros.sort(function (a, b) {
+    return a - b
+}); // Para ordenar el array numéricamente.
 
-numeros.forEach((elemento)=>{
+numeros_ascendentes.forEach((elemento) => {
     document.write(elemento + "<br/>");
 })
+
+
+//4 Lo ordenamos en orden descendente:******************************************************
+
+document.write("<h1>Ordenado en orden descendente</h1>");
+var numeros_descendentes = numeros.sort(function (a, b) {
+    return b - a
+});
+for (let numero in numeros_descendentes) {
+    document.write(numeros_descendentes[numero] + "<br/>");
+}
+
+// 5 Busqueda de un número introducido por el usuario.
 console.log(numeros);
 
-//4
+var numero_buscar = prompt("Introduce un número para comprobar: ");
+numero_buscar = parseInt(numero_buscar);
+var posicion =  numeros.findIndex(indice => indice == numero_buscar);;
 
+if (posicion && posicion != -1) {
+   document.write("El número "+numero_buscar+"se encuentra en la posicion "+posicion);
+} else {
+    document.write("El número "+numero_buscar+"no está");
+}
 
-//5
+//6 ******************************************************************************************
 document.write("<h2>El array de números tiene " + numeros.length + " números</h2>");
