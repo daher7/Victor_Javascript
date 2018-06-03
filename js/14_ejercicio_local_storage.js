@@ -5,7 +5,6 @@ var formularioBorrar = document.querySelector("#borraPelicula");
 
 // Declaramos las funciones.
 function guardarPelicula() {
-
     var titulo = document.querySelector("#addpelicula").value;
     if (titulo.length >= 1) {
         localStorage.setItem(titulo, titulo);
@@ -17,7 +16,7 @@ function borrarPelicula(){
     localStorage.removeItem(titulo);
 }
 
-// Agregamos el evento al boton.
+// Agregamos los eventos a los botones.
 formulario.addEventListener('submit', guardarPelicula);
 formularioBorrar.addEventListener('submit', borrarPelicula);
 
