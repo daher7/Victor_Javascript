@@ -45,7 +45,7 @@ function listarUsuario() {
 
     nombre.innerHTML = usuario.first_name + " " + usuario.last_name;
     avatar.src = usuario.avatar;
-    avatar.width ="100";
+    avatar.width = "100";
 
     div_usuario.appendChild(nombre);
     div_usuario.appendChild(avatar);
@@ -65,4 +65,7 @@ getUsuarios()
     .then(user => {
         usuario = user.data;
         listarUsuario();
+    })
+    .catch(error => {   // Para recoger si hay errores al realizar la promesa/petición.
+        console.log(error + "fffff");
     });
